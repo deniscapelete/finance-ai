@@ -49,7 +49,6 @@ enum TransactionPaymentMethod {
   DEBIT_CARD
   BANK_TRANSFER
   BANK_SLIP
-  HEALTH
   CASH
   PIX
   OTHER
