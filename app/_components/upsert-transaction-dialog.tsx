@@ -41,6 +41,7 @@ import {
   TransactionType,
 } from "@prisma/client";
 import { upsertTransaction } from "../_actions/upsert-transactions";
+import { useEffect } from "react";
 
 interface UpsertTransactionDialogProps {
   isOpen: boolean;
@@ -90,6 +91,12 @@ const UpsertTransactionDialog = ({
       type: TransactionType.EXPENSE,
     },
   });
+
+  useEffect(() => {
+    if (defaultValues) {
+      form.reset(defaultValues);
+    }
+  }, [defaultValues, form]);
 
   const onSubmit = async (data: FormSchema) => {
     try {
