@@ -29,9 +29,11 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           <h1 className="text-2xl font-bold">Dashboad</h1>
           <TimeSelect />
         </div>
-      </div>
 
-      <SummaryCards month={month} />
+        <div className="grid grid-cols-[2fr,1fr]">
+          <SummaryCards month={month} />
+        </div>
+      </div>
     </>
   );
 };
